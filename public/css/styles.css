@@ -22,7 +22,6 @@ body{
     position: relative;
     text-align: left;
     text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
-    width: 1901px;
     perspective-origin: 950.5px 128px;
     transform-origin: 950.5px 128px;
     background-color: #FFE29D;
@@ -47,9 +46,8 @@ body{
 }
 .bs-docs-header .header{
     background: url(../img/Increase.png) no-repeat left;
-    width: 760px;
     box-sizing: border-box;
-    margin: 0px 380px 0px 0px;
+    margin-left:0px;
     height: 121px;
 }
 .bs-docs-header h1 {
@@ -57,8 +55,6 @@ body{
     height: 45px;
     text-align: left;
 	text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.64);
-    perspective-origin: 380px 30px;
-    transform-origin: 380px 30px;
     border: 0px none rgb(255, 255, 255);
     font-size: normal normal 500 normal 60px/60px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
     font-variant: small-caps;
