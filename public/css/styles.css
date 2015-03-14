@@ -14,7 +14,6 @@ body{
      opacity: 1;
 }
 
-
 .bs-docs-header {
     box-sizing: border-box;
     color: rgb(129, 181, 221);
@@ -35,7 +34,6 @@ body{
     box-sizing: border-box;
     height: 16px;
     position: relative;
-    width: 1901px;
     perspective-origin: 950.5px 128px;
     transform-origin: 950.5px 128px;
     background-color: #253939;
