@@ -41,3 +41,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+.buildpath
+.settings/.jsdtscope
+.settings/org.eclipse.php.core.prefs
+.settings/org.eclipse.wst.jsdt.ui.superType.container
+.settings/org.eclipse.wst.jsdt.ui.superType.name
+.settings/org.eclipse.wst.common.project.facet.core.xml
+.project
+app/cache/c__xampp_htdocs_increase_app_views_index.volt.php
+app/cache/c__xampp_htdocs_increase_app_views_index_index.volt.php

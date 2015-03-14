@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+body{
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;!important
+	font-weight: 400;
+}
+.alert {
+    transition: 1s linear all;
+     opacity: 1;
+}
+.alert.ng-hide {
+     opacity: 0;
+}
+
+.alert.ng-show {
+     opacity: 1;
+}
+
+
+.bs-docs-header {
+    box-sizing: border-box;
+    color: rgb(129, 181, 221);
+    height: 165px;
+    position: relative;
+    text-align: left;
+    text-shadow: rgba(0, 0, 0, 0.0980392) 0px 1px 0px;
+    width: 1901px;
+    perspective-origin: 950.5px 128px;
+    transform-origin: 950.5px 128px;
+    background-color: #FFE29D;
+    border: 0px none rgb(205, 191, 227);
+    font: normal normal normal normal 24px/34.2857170104981px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0px 0px 6px;
+    outline: rgb(205, 191, 227) none 0px;
+    padding: 0px 15px;
+}
+.second-header {
+    box-sizing: border-box;
+    height: 16px;
+    position: relative;
+    width: 1901px;
+    perspective-origin: 950.5px 128px;
+    transform-origin: 950.5px 128px;
+    background-color: #253939;
+    border: 0px none rgb(205, 191, 227);
+    margin: 0px 0px 10px;
+    outline: rgb(205, 191, 227) none 0px;
+    padding: 0px 15px;
+}
+.bs-docs-header .header{
+    background: url(../img/Increase.png) no-repeat left;
+    width: 760px;
+    box-sizing: border-box;
+    margin: 0px 380px 0px 0px;
+    height: 121px;
+}
+.bs-docs-header h1 {
+    color: #253939;
+    height: 45px;
+    text-align: left;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.64);
+    perspective-origin: 380px 30px;
+    transform-origin: 380px 30px;
+    border: 0px none rgb(255, 255, 255);
+    font-size: normal normal 500 normal 60px/60px 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-variant: small-caps;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left :140px;
+    padding-top: 25px;
+}
+
+.bs-docs-header p{
+    color: #253939;
+    font-weight: 200;
+	font-size: 18px;
+	font-stretch: ultra-expanded;
+	text-shadow: 1px 1px 1px rgba(150, 150, 150, 0.24);
+	font-variant: small-caps;
+    padding-left :140px;
+}
+
