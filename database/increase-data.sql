@@ -23,6 +23,23 @@ CREATE DATABASE IF NOT EXISTS `increase` DEFAULT CHARACTER SET utf8 COLLATE utf8
 USE `increase`;
 
 --
+-- Vider la table avant d'insérer `user`
+--
+
+TRUNCATE TABLE `user`;
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id`, `mail`, `password`, `identite`, `role`) VALUES
+(1, 'johndoe@kobject.net', 'ffffff9afffffff15b336e6affffff9619ffffff92ffffff8537ffffffdf30ffffffb2ffffffe6ffffffa2376569fffffffcfffffff9ffffffd7ffffffe773ffffffecffffffceffffffde65606529ffffffa0', 'John DOE', 'user'),
+(2, 'igor.minar@gmail.com', 'ffffff84ffffffd8ffffff9877fffffff0ffffffd4041efffffffb6bfffffff91a16fffffff024ffffff8f2fffffffd573ffffffe6ffffffaf05ffffffc1ffffff9fffffff96ffffffbeffffffdbffffff9fffffff882f78ffffff82', 'Igor MINAR', 'author'),
+(3, 'admin@local.fr', 'ffffff8c6976ffffffe5ffffffb5410415ffffffbdffffffe908ffffffbd4dffffffee15ffffffdfffffffb167ffffffa9ffffffc873fffffffc4bffffffb8ffffffa81f6f2affffffb448ffffffa918', 'Admin', 'admin,user,author'),
+(4, 'misko.hevery@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Miško Hevery', 'author'),
+(5, 'pete.bacon@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Pete Bacon Darwin', 'author');
+
+
+--
 -- Vider la table avant d'insérer `message`
 --
 
@@ -92,21 +109,6 @@ INSERT INTO `usecase` (`code`, `nom`, `poids`, `avancement`, `idProjet`, `idDev`
 ('OB-UC1', 'Connexion au server REST', 10, 0, 2, 5),
 ('OB-UC2', 'Gestion des bières (liste/ajout/modification)', 10, 0, 2, 5);
 
---
--- Vider la table avant d'insérer `user`
---
-
-TRUNCATE TABLE `user`;
---
--- Contenu de la table `user`
---
-
-INSERT INTO `user` (`id`, `mail`, `password`, `identite`, `role`) VALUES
-(1, 'johndoe@kobject.net', 'ffffff9afffffff15b336e6affffff9619ffffff92ffffff8537ffffffdf30ffffffb2ffffffe6ffffffa2376569fffffffcfffffff9ffffffd7ffffffe773ffffffecffffffceffffffde65606529ffffffa0', 'John DOE', 'user'),
-(2, 'igor.minar@gmail.com', 'ffffff84ffffffd8ffffff9877fffffff0ffffffd4041efffffffb6bfffffff91a16fffffff024ffffff8f2fffffffd573ffffffe6ffffffaf05ffffffc1ffffff9fffffff96ffffffbeffffffdbffffff9fffffff882f78ffffff82', 'Igor MINAR', 'author'),
-(3, 'admin@local.fr', 'ffffff8c6976ffffffe5ffffffb5410415ffffffbdffffffe908ffffffbd4dffffffee15ffffffdfffffffb167ffffffa9ffffffc873fffffffc4bffffffb8ffffffa81f6f2affffffb448ffffffa918', 'Admin', 'admin,user,author'),
-(4, 'misko.hevery@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Miško Hevery', 'author'),
-(5, 'pete.bacon@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Pete Bacon Darwin', 'author');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
