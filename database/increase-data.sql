@@ -23,11 +23,6 @@ CREATE DATABASE IF NOT EXISTS `increase` DEFAULT CHARACTER SET utf8 COLLATE utf8
 USE `increase`;
 
 --
--- Vider la table avant d'insérer `user`
---
-
-TRUNCATE TABLE `user`;
---
 -- Contenu de la table `user`
 --
 
@@ -38,25 +33,6 @@ INSERT INTO `user` (`id`, `mail`, `password`, `identite`, `role`) VALUES
 (4, 'misko.hevery@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Miško Hevery', 'author'),
 (5, 'pete.bacon@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Pete Bacon Darwin', 'author');
 
-
---
--- Vider la table avant d'insérer `message`
---
-
-TRUNCATE TABLE `message`;
---
--- Contenu de la table `message`
---
-
-INSERT INTO `message` (`id`, `objet`, `content`, `date`, `idUser`, `idProjet`, `idFil`) VALUES
-(2, 'Essai', 'Aucun contenu', '2015-03-12 23:00:00', 1, 1, NULL),
-(7, 'Ok', 'Rien à répondre', '2015-03-13 13:33:51', 2, 1, 2);
-
---
--- Vider la table avant d'insérer `projet`
---
-
-TRUNCATE TABLE `projet`;
 --
 -- Contenu de la table `projet`
 --
@@ -66,28 +42,14 @@ INSERT INTO `projet` (`id`, `nom`, `description`, `dateLancement`, `dateFinPrevu
 (2, 'Open-beer', 'A free, public database, API and web application for beer information.', '2015-03-15', '2015-03-29', 1);
 
 --
--- Vider la table avant d'insérer `tache`
+-- Contenu de la table `message`
 --
 
-TRUNCATE TABLE `tache`;
---
--- Contenu de la table `tache`
---
+INSERT INTO `message` (`id`, `objet`, `content`, `date`, `idUser`, `idProjet`, `idFil`) VALUES
+(2, 'Essai', 'Aucun contenu', '2015-03-12 23:00:00', 1, 1, NULL),
+(7, 'Ok', 'Rien à répondre', '2015-03-13 13:33:51', 2, 1, 2);
 
-INSERT INTO `tache` (`id`, `libelle`, `date`, `avancement`, `codeUseCase`) VALUES
-(1, 'Interview client +rédaction', '2015-03-22', 100, 'I-UC1'),
-(2, 'MCD', '2015-03-22', 100, 'I-UC2'),
-(3, 'Génération base', '2015-03-22', 100, 'I-UC3'),
-(4, 'Uses cases', '2015-03-23', 100, 'I-UC4'),
-(5, 'Connexion REST', '2015-03-13', 50, 'OB-UC1'),
-(6, 'Liste des bières', '2015-03-22', 100, 'OB-UC2'),
-(7, 'Liste des bières par brasserie', '2015-03-22', 10, 'OB-UC2');
 
---
--- Vider la table avant d'insérer `usecase`
---
-
-TRUNCATE TABLE `usecase`;
 --
 -- Contenu de la table `usecase`
 --
@@ -109,6 +71,18 @@ INSERT INTO `usecase` (`code`, `nom`, `poids`, `avancement`, `idProjet`, `idDev`
 ('OB-UC1', 'Connexion au server REST', 10, 0, 2, 5),
 ('OB-UC2', 'Gestion des bières (liste/ajout/modification)', 10, 0, 2, 5);
 
+--
+-- Contenu de la table `tache`
+--
+
+INSERT INTO `tache` (`id`, `libelle`, `date`, `avancement`, `codeUseCase`) VALUES
+(1, 'Interview client +rédaction', '2015-03-22', 100, 'I-UC1'),
+(2, 'MCD', '2015-03-22', 100, 'I-UC2'),
+(3, 'Génération base', '2015-03-22', 100, 'I-UC3'),
+(4, 'Uses cases', '2015-03-23', 100, 'I-UC4'),
+(5, 'Connexion REST', '2015-03-13', 50, 'OB-UC1'),
+(6, 'Liste des bières', '2015-03-22', 100, 'OB-UC2'),
+(7, 'Liste des bières par brasserie', '2015-03-22', 10, 'OB-UC2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
