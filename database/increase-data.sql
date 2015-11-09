@@ -23,23 +23,16 @@ CREATE DATABASE IF NOT EXISTS `increase` DEFAULT CHARACTER SET utf8 COLLATE utf8
 USE `increase`;
 
 --
--- Vider la table avant d'insérer `message`
+-- Contenu de la table `user`
 --
 
-TRUNCATE TABLE `message`;
---
--- Contenu de la table `message`
---
+INSERT INTO `user` (`id`, `mail`, `password`, `identite`, `role`) VALUES
+(1, 'johndoe@kobject.net', 'ffffff9afffffff15b336e6affffff9619ffffff92ffffff8537ffffffdf30ffffffb2ffffffe6ffffffa2376569fffffffcfffffff9ffffffd7ffffffe773ffffffecffffffceffffffde65606529ffffffa0', 'John DOE', 'user'),
+(2, 'igor.minar@gmail.com', 'ffffff84ffffffd8ffffff9877fffffff0ffffffd4041efffffffb6bfffffff91a16fffffff024ffffff8f2fffffffd573ffffffe6ffffffaf05ffffffc1ffffff9fffffff96ffffffbeffffffdbffffff9fffffff882f78ffffff82', 'Igor MINAR', 'author'),
+(3, 'admin@local.fr', 'ffffff8c6976ffffffe5ffffffb5410415ffffffbdffffffe908ffffffbd4dffffffee15ffffffdfffffffb167ffffffa9ffffffc873fffffffc4bffffffb8ffffffa81f6f2affffffb448ffffffa918', 'Admin', 'admin,user,author'),
+(4, 'misko.hevery@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Miško Hevery', 'author'),
+(5, 'pete.bacon@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Pete Bacon Darwin', 'author');
 
-INSERT INTO `message` (`id`, `objet`, `content`, `date`, `idUser`, `idProjet`, `idFil`) VALUES
-(2, 'Essai', 'Aucun contenu', '2015-03-12 23:00:00', 1, 1, NULL),
-(7, 'Ok', 'Rien à répondre', '2015-03-13 13:33:51', 2, 1, 2);
-
---
--- Vider la table avant d'insérer `projet`
---
-
-TRUNCATE TABLE `projet`;
 --
 -- Contenu de la table `projet`
 --
@@ -49,28 +42,14 @@ INSERT INTO `projet` (`id`, `nom`, `description`, `dateLancement`, `dateFinPrevu
 (2, 'Open-beer', 'A free, public database, API and web application for beer information.', '2015-03-15', '2015-03-29', 1);
 
 --
--- Vider la table avant d'insérer `tache`
+-- Contenu de la table `message`
 --
 
-TRUNCATE TABLE `tache`;
---
--- Contenu de la table `tache`
---
+INSERT INTO `message` (`id`, `objet`, `content`, `date`, `idUser`, `idProjet`, `idFil`) VALUES
+(2, 'Essai', 'Aucun contenu', '2015-03-12 23:00:00', 1, 1, NULL),
+(7, 'Ok', 'Rien à répondre', '2015-03-13 13:33:51', 2, 1, 2);
 
-INSERT INTO `tache` (`id`, `libelle`, `date`, `avancement`, `codeUseCase`) VALUES
-(1, 'Interview client +rédaction', '2015-03-22', 100, 'I-UC1'),
-(2, 'MCD', '2015-03-22', 100, 'I-UC2'),
-(3, 'Génération base', '2015-03-22', 100, 'I-UC3'),
-(4, 'Uses cases', '2015-03-23', 100, 'I-UC4'),
-(5, 'Connexion REST', '2015-03-13', 50, 'OB-UC1'),
-(6, 'Liste des bières', '2015-03-22', 100, 'OB-UC2'),
-(7, 'Liste des bières par brasserie', '2015-03-22', 10, 'OB-UC2');
 
---
--- Vider la table avant d'insérer `usecase`
---
-
-TRUNCATE TABLE `usecase`;
 --
 -- Contenu de la table `usecase`
 --
@@ -93,20 +72,17 @@ INSERT INTO `usecase` (`code`, `nom`, `poids`, `avancement`, `idProjet`, `idDev`
 ('OB-UC2', 'Gestion des bières (liste/ajout/modification)', 10, 0, 2, 5);
 
 --
--- Vider la table avant d'insérer `user`
+-- Contenu de la table `tache`
 --
 
-TRUNCATE TABLE `user`;
---
--- Contenu de la table `user`
---
-
-INSERT INTO `user` (`id`, `mail`, `password`, `identite`, `role`) VALUES
-(1, 'johndoe@kobject.net', 'ffffff9afffffff15b336e6affffff9619ffffff92ffffff8537ffffffdf30ffffffb2ffffffe6ffffffa2376569fffffffcfffffff9ffffffd7ffffffe773ffffffecffffffceffffffde65606529ffffffa0', 'John DOE', 'user'),
-(2, 'igor.minar@gmail.com', 'ffffff84ffffffd8ffffff9877fffffff0ffffffd4041efffffffb6bfffffff91a16fffffff024ffffff8f2fffffffd573ffffffe6ffffffaf05ffffffc1ffffff9fffffff96ffffffbeffffffdbffffff9fffffff882f78ffffff82', 'Igor MINAR', 'author'),
-(3, 'admin@local.fr', 'ffffff8c6976ffffffe5ffffffb5410415ffffffbdffffffe908ffffffbd4dffffffee15ffffffdfffffffb167ffffffa9ffffffc873fffffffc4bffffffb8ffffffa81f6f2affffffb448ffffffa918', 'Admin', 'admin,user,author'),
-(4, 'misko.hevery@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Miško Hevery', 'author'),
-(5, 'pete.bacon@gmail.com', '15ffffffe2ffffffb0ffffffd3ffffffc338ffffff91ffffffebffffffb0fffffff1ffffffef60ffffff9effffffc419420c20ffffffe320ffffffceffffff94ffffffc65fffffffbcffffff8c331244ffffff8effffffb225', 'Pete Bacon Darwin', 'author');
+INSERT INTO `tache` (`id`, `libelle`, `date`, `avancement`, `codeUseCase`) VALUES
+(1, 'Interview client +rédaction', '2015-03-22', 100, 'I-UC1'),
+(2, 'MCD', '2015-03-22', 100, 'I-UC2'),
+(3, 'Génération base', '2015-03-22', 100, 'I-UC3'),
+(4, 'Uses cases', '2015-03-23', 100, 'I-UC4'),
+(5, 'Connexion REST', '2015-03-13', 50, 'OB-UC1'),
+(6, 'Liste des bières', '2015-03-22', 100, 'OB-UC2'),
+(7, 'Liste des bières par brasserie', '2015-03-22', 10, 'OB-UC2');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
