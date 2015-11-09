@@ -7,7 +7,9 @@
 		{{ javascript_include('js/jquery.min.js') }}
 		{{ javascript_include('js/bootstrap.min.js') }}
 	</head>
+	<meta charset="UTF-8">
 	<body>
+	<div class="second-header"></div>
 	<div class="bs-docs-header">
 		<div class="container">
 			<div class="header">
@@ -16,14 +18,27 @@
 			</div>
 		</div>
 	</div>
-	<div class="second-header"></div>
 	<div class="container">
 		<ol class="breadcrumb">
 				<li><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
 			</ol>
+		<div class="content">
+			{{ content() }}
+		</div>
 	</div>
-	<div class="container">
-		{{ content() }}
+	<div id="footer">
+		<div class="container">
+			<div class="col-md-4">
+			<p>Mentions légales</p>
+			<p><span>Created with Phalcon</span></p>
+			</div>
+			<div class="col-md-4">
+				<div class="input-group">
+					<input id="ig-5" name="ig-5" class="form-control" role="input" value="" type="text" aria-describedby="right-ig-5" placeholder="Rechercher...">
+					<div id="right-ig-5" class="input-group-btn"><button id="ig-4-radio" class="btn btn-default" role="button">Go</button></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
