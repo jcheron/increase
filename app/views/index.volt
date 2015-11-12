@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="icon" type="image/png" href="public/img/increase.png" />
 		<title>Increase</title>
 		{{ stylesheet_link("css/bootstrap.min.css") }}
 		{{ stylesheet_link("css/styles.css") }}
