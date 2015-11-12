@@ -21,7 +21,7 @@
 	</div>
 	<div class="container">
 		<ol class="breadcrumb">
-				<li><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
+				<li><a href="{{url.get("index")}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
 			</ol>
 		<div class="content">
 			{{ content() }}
