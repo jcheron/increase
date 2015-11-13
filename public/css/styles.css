@@ -76,6 +76,7 @@ body{
 	padding: 30px;
 	border: 1px solid #ddd;
 	background: #fff;
+	min-height: 500px;
 }
 .content p a{
 	font-weight:bold;

@@ -24,7 +24,10 @@
 				<li><a href="{{url.get("index")}}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
 			</ol>
 		<div class="content">
-			{{ content() }}
+			<div id="message"></div>
+			<div id="content">
+				{{ content() }}
+			</div>
 		</div>
 	</div>
 	<div id="footer">

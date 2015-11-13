@@ -18,10 +18,12 @@ class DefaultController extends ControllerBase{
     		}
     		$message->setTimerInterval($this->messageTimerInterval);
     		$msg=$this->_showDisplayedMessage($message);
-    		$this->jquery->compile($this->view);
     	}
     	$objects=call_user_func($this->model."::find");
     	$this->view->setVars(array("objects"=>$objects,"siteUrl"=>$this->url->getBaseUri(),"baseHref"=>$this->dispatcher-> getControllerName(),"model"=>$this->model,"msg"=>$msg));
+    	$this->jquery->getOnClick(".update, .add","","#content",array("attr"=>"data-ajax"));
+    	$this->jquery->getOnClick(".delete","","#message",array("attr"=>"data-ajax"));
+    	$this->jquery->compile($this->view);
     	$this->view->pick("main/index");
     }
 
@@ -50,7 +52,10 @@ class DefaultController extends ControllerBase{
      * @param string $id
      */
     public function frmAction($id=NULL){
-    	echo "Non implémenté...";
+    	echo "A surdéfinir...<br>Sans oublier l'appel de la méthode parent en fin.";
+    	$this->jquery->postFormOnClick(".validate", $this->dispatcher->getControllerName()."/update", "frmObject","#content");
+    	$this->jquery->getOnClick(".cancel","","#content",array("attr"=>"data-ajax"));
+    	$this->jquery->compile($this->view);
     }
 
 
@@ -112,12 +117,23 @@ class DefaultController extends ControllerBase{
     	$this->dispatcher->forward(array("controller"=>$this->dispatcher->getControllerName(),"action"=>"index","params"=>array($msg)));
     	}
     }
-
+    public function deleteAction($id){
+    	$object=call_user_func($this->model."::findfirst",$id);
+    	$bs=$this->jquery->bootstrap();
+    	$btYes=$bs->htmlButton("btYes","Supprimer")->setSize("btn-sm");
+    	$btYes->getOnClick($this->dispatcher->getControllerName()."/_delete/".$id,"#content");
+    	$btYes->onClick("$('#message').html('');");
+    	$btCancel=$bs->htmlButton("btCancel","Annuler")->setSize("btn-sm");
+    	$btCancel->onClick("$('#message').html('');");
+    	$this->view->setVars(array("object"=>$object));
+    	$this->view->pick("main/delete");
+    	$this->jquery->compile($this->view);
+    }
     /**
      * Supprime l'instance dont l'id est $id dans la BDD
      * @param int $id
      */
-    public function deleteAction($id){
+    public function _deleteAction($id){
     	try{
     		$object=call_user_func($this->model."::findfirst",$id);
     		if($object!==NULL){

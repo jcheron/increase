@@ -3,29 +3,9 @@
 class IndexController extends ControllerBase
 {
 
-    public function indexAction()
-    {
-
+    public function indexAction(){
+    	$this->jquery->getOnClick("a.btn","","#content",array("attr"=>"data-ajax"));
+    	$this->jquery->compile($this->view);
     }
-
-    public function usecasesAction(){
-    	$usecases=Usecase::find();
-    	foreach ($usecases as $usecase){
-    		echo $usecase->getNom()." ".$usecase->getDeveloppeur()->getIdentite()."<br>";
-    	}
-    }
-
-    public function autreAction(){
-    	$ids = $this->modelsManager->createBuilder()->columns('idProjet')
-    	->from('Usecase')
-    	->groupBy('Usecase.idProjet')
-    	->where("idDev=5")
-    	->getQuery()
-    	->execute();
-        	foreach ($ids as $id){
-    		echo $id->idProjet."<br>";
-    	}
-    }
-
 }
 
