@@ -52,7 +52,7 @@ class DefaultController extends ControllerBase{
      * @param string $id
      */
     public function frmAction($id=NULL){
-    	echo "A surdéfinir...<br>Sans oublier l'appel de la méthode parent en fin.";
+    	echo "Méthode <b>frmAction</b> à surdéfinir...<br>Sans oublier l'appel de la méthode parent en fin : <b>parent::frmAction($id);</b>";
     	$this->jquery->postFormOnClick(".validate", $this->dispatcher->getControllerName()."/update", "frmObject","#content");
     	$this->jquery->getOnClick(".cancel","","#content",array("attr"=>"data-ajax"));
     	$this->jquery->compile($this->view);
@@ -62,7 +62,7 @@ class DefaultController extends ControllerBase{
     /**
      * Affecte membre à membre les valeurs du tableau associatif $_POST aux membres de l'objet $object<br>
      * Prévoir une sur-définition de la méthode pour l'affectation des membres de type objet<br>
-     * Cette méthode est utilisée update()
+     * Cette méthode est utilisée par update()
      * @see DefaultController::update()
      * @param multitype:$className $object
      */
@@ -125,9 +125,12 @@ class DefaultController extends ControllerBase{
     	$btYes->onClick("$('#message').html('');");
     	$btCancel=$bs->htmlButton("btCancel","Annuler")->setSize("btn-sm");
     	$btCancel->onClick("$('#message').html('');");
-    	$this->view->setVars(array("object"=>$object));
+    	$this->view->setVars(array("message"=>$this->_deleteMessage($object)));
     	$this->view->pick("main/delete");
     	$this->jquery->compile($this->view);
+    }
+    protected function _deleteMessage($object){
+    	return "Confirmez-vous la suppression de l'objet <b>". $object."</b> ?";
     }
     /**
      * Supprime l'instance dont l'id est $id dans la BDD

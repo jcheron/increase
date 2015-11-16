@@ -46,7 +46,6 @@ Temporary Items
 .project
 app/cache/
 public/css/bootstrap.min-old.css
-app/models/
 app/config/config.php
 app/vendor/
 app/composer.lock

@@ -1,5 +1,5 @@
 {{msg}}
-<table class='table table-striped'>
+<table class='table table-condensed table-hover'>
 	<thead><tr><th colspan='3'>{{model}}</th></tr></thead>
 		<tbody>
 		{% for object in objects %}
