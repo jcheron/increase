@@ -1,5 +1,5 @@
-![Increase logo](http://open-beer.kobject.net/img/Increase.png "Increase logo")
-# increase
+![Increase logo](http://angular.kobject.net/git/phalconist/Increase.png "Increase logo")
+# increase (Corrections mars 2016)
 A Phalcon web application to manage the progress of projects, and improve communication with the customer
 #Howto
 
